@@ -7,7 +7,10 @@
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
 function trimProperties(obj) {
-  // ✨ implement
+  return Object.keys(obj).reduce((acc,curr) => {
+    acc[curr] = obj[curr].trim()
+    return acc;
+  },{})
 }
 
 /**
@@ -19,7 +22,10 @@ function trimProperties(obj) {
  * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
  */
 function trimPropertiesMutation(obj) {
-  // ✨ implement
+  for(let prop in obj){
+    obj[prop] = obj[prop].trim
+  }
+  return obj
 }
 
 /**
@@ -31,7 +37,13 @@ function trimPropertiesMutation(obj) {
  * findLargestInteger([{ integer: 1 }, { integer: 3 }, { integer: 2 }]) // returns 3
  */
 function findLargestInteger(integers) {
-  // ✨ implement
+  let num = 0;
+  for(let i = 0; i < integers.length; i++){
+    if(integers[i].integer > num){
+      num = integers[i].integer
+    }
+  }
+  return num
 }
 
 class Counter {
